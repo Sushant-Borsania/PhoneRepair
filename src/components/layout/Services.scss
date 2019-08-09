@@ -1,0 +1,16 @@
+.container {
+  background-color: antiquewhite;
+  color: green;
+  padding: 10px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-around;
+  & > * {
+    height: 100px;
+    width: 100px;
+    background-color: peachpuff;
+    text-align: center;
+  }
+}
