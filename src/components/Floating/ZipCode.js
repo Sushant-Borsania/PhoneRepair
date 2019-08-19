@@ -1,37 +1,50 @@
 import React, { Component } from "react";
+import StoreFetcher from './StoreFetcher';
 
-class ZipCode extends React.Component {
+class ZipCode extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
-
+    this.state = {
+      value: "",
+      isEdmonton: null
+     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.checkService = this.checkService.bind(this);
+  }
+  checkService(val){
+    let e = val.toUpperCase().replace(/\W/g,'').replace(/(...)/,'$1 ')
+    zipset.has(e) ? this.setState ({isEdmonton : true}) : this.setState ({isEdmonton: false});
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    const val = event.target.value;
+    const newVal = val.toUpperCase().replace(/\W/g,'').replace(/(...)/,'$1 ')
+    this.setState({ value: val }, this.checkService(val));
   }
 
   handleSubmit(event) {
-    alert("A name was submitted: " + this.state.value);
     event.preventDefault();
+    console.log('After Checking', this.state.isEdmonton);
+    this.state.isEdmonton ? this.props.history.push("/phoneRepair/address") : this.props.history.push("/phoneRepair/thankyou");
   }
 
   render() {
     return (
+      <div className="container">
       <form onSubmit={this.handleSubmit}>
-
-
-          <input type="text" value={this.state.value} placeholder="Zip Code" onChange={this.handleChange} />
-
+        <input type="text" value={this.state.value} placeholder="Zip Code" onChange={this.handleChange} />
         <input type="submit" value="Submit" />
       </form>
+      <StoreFetcher/>
+      </div>
     );
   }
 }
 
 export default ZipCode;
+
+
 const EdmontonZip = [
   "T5A 0A1",
   "T5A 0A2",
@@ -14225,3 +14238,5 @@ const EdmontonZip = [
   "T6W 3S2",
   "T6W 3S6"
 ];
+
+const zipset = new Set(EdmontonZip);

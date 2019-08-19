@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createColor } from "../../store/actions/createDetails";
+import StoreFetcher from "../Floating/StoreFetcher";
 
 class PhoneColorSelection extends Component {
   constructor(props) {
@@ -13,11 +13,9 @@ class PhoneColorSelection extends Component {
   handleClick = e => {
     const color = this.phoneColor[e].textContent;
     this.props.createColor(color);
-    console.log("color selecting");
   };
 
   navigateBtn = path => {
-    console.log("calling fun");
     this.props.history.push(path);
   };
   render() {
@@ -25,7 +23,7 @@ class PhoneColorSelection extends Component {
     const isState = this.props.userSelections.color;
     let btn;
     if (isState) {
-      btn = <button onClick={() => this.navigateBtn("/phoneRepair/zip-code")}>Next</button>;
+      btn = <button onClick={() => this.navigateBtn("/phoneRepair/dateConfirmation")}>Next</button>;
     } else {
       btn = <button disabled>Please select color</button>;
     }
@@ -47,11 +45,12 @@ class PhoneColorSelection extends Component {
           })}
         </div>
         {btn}
-        <div className="floater">
+        {/* <div className="floater">
           <div className="">Company: {this.props.userSelections.company}</div>
           <div className="">Model: {this.props.userSelections.model}</div>
           <div className="">Color: {this.props.userSelections.color}</div>
-        </div>
+        </div> */}
+        <StoreFetcher className="floater"/>
       </div>
     );
   }

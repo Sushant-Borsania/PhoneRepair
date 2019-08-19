@@ -11,6 +11,7 @@ class PhoneRepair extends Component {
   }
 
   handleClick = e => {
+
     const brand = this.phoneContent[e].textContent;
     this.props.createBrand(brand);
   };

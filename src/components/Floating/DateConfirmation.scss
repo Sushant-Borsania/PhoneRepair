@@ -1,0 +1,38 @@
+.Example {
+  text-align: center;
+}
+
+.Example-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Example-link {
+  color: #61dafb;
+}
+.react-datepicker__time-container {
+  width: 155px !important;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+  width: 100%;
+}
+
+.react-datepicker__time-container {
+  width: 100%;
+}
+
+.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box ul.react-datepicker__time-list li.react-datepicker__time-list-item--disabled {
+  display: none !important;
+}
+
+.btnClass {
+  background-color: none;
+  border-bottom: 1px solid black;
+}

@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { createStore, applyMiddleware } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+
 import rootReducer from "./store/reducers/rootReducer";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
@@ -28,7 +30,7 @@ export const saveState = state => {
 };
 const persistedState = loadState();
 
-const store = createStore(rootReducer, persistedState, applyMiddleware(thunk));
+const store = createStore(rootReducer, persistedState, composeWithDevTools(applyMiddleware(thunk)));
 store.subscribe(() => {
   const data = store.getState();
   saveState(data);
@@ -40,4 +42,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
-//$ git push -u origin master
