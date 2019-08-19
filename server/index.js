@@ -1,12 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 const sgMail = require("@sendgrid/mail");
+require("dotenv").config();
+
+console.log(process.env);
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-sgMail.setApiKey("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");
+sgMail.setApiKey(process.env.API_KEY);
 
 app.use(cors());
 
@@ -19,7 +22,7 @@ app.get("/", (req, res) => {
 app.post("/phoneRepair/address", (req, res) => {
   const { Email, FirstName, LastName, Address, HomePermit, company, color, model } = req.body.data;
   // console.log("query", req.body.data);
-//sendgrid reqs
+  //sendgrid reqs
   const msg = {
     to: Email,
     from: "sushant.yt@gmail.com",
@@ -37,7 +40,7 @@ app.post("/phoneRepair/address", (req, res) => {
     }
   };
   sgMail.send(msg);
-  res.send('Data received');
+  res.send("Data received");
 });
 
 app.listen(4000, () => console.log("running on port 4000"));
