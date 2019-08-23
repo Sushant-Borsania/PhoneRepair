@@ -3,7 +3,8 @@ const initState = {
   model: "",
   color: "",
   date: "",
-  time: ""
+  time: "",
+  cost: ""
 };
 
 const userSelections = (state = initState, action) => {
@@ -31,6 +32,10 @@ const userSelections = (state = initState, action) => {
     case "CREATE_TIME":
       return Object.assign({}, state, {
         time: action.details
+      });
+      case "CREATE_COST":
+      return Object.assign({}, state, {
+        cost: action.details
       });
   }
   return state;

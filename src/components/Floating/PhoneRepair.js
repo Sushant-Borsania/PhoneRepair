@@ -11,7 +11,6 @@ class PhoneRepair extends Component {
   }
 
   handleClick = e => {
-
     const brand = this.phoneContent[e].textContent;
     this.props.createBrand(brand);
   };
@@ -23,7 +22,7 @@ class PhoneRepair extends Component {
           <h2>Phone Repair - this is the company names</h2>
         </div>
         <div className="details">
-          {this.props.companyName.phoneReducers.project.map((company, key) => {
+          {this.props.companyName.project.map((company, key) => {
             return (
               <Link to={`/phoneRepair/${company.id}`} onClick={() => this.handleClick(key)} key={key}>
                 <div
@@ -45,7 +44,7 @@ class PhoneRepair extends Component {
 
 const mapStatetoProps = state => {
   return {
-    companyName: state,
+    companyName: state.phoneReducers
   };
 };
 

@@ -8,7 +8,7 @@ import PhoneColorSelection from "./components/Floating/PhoneColorSelection";
 import ZipCode from "./components/Floating/ZipCode";
 import FormikForm from "./components/Floating/Address";
 import NoAddress from "./components/Floating/NoAddress";
-import DateConfirmation from "./components/Floating/DateConfirmation";
+import DateIssue from "./components/Floating/DateIssue";
 
 class App extends Component {
   render() {
@@ -21,7 +21,7 @@ class App extends Component {
             <Route path="/phoneRepair/zip-code" component={ZipCode} />
             <Route path="/phoneRepair/address" component={FormikForm} />
             <Route path="/phoneRepair/thankyou" component={NoAddress} />
-            <Route path="/phoneRepair/dateConfirmation" component={DateConfirmation} />
+            <Route path="/phoneRepair/date-and-issue" component={DateIssue} />
             <Route path="/phoneRepair/:brand/:color" component={PhoneColorSelection} />
             <Route path="/phoneRepair/:brand" component={PhoneSelection} />
             <Route path="/phoneRepair" component={PhoneRepair} />

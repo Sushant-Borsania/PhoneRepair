@@ -78,12 +78,6 @@ class DateConfirmation extends React.Component {
     }
   };
 
-  // handleDateChange = date => {
-  //   this.setState({
-  //     closeDate: date,
-  //     minTime: this.calculateMinTime(date)
-  //   });
-  // };
 
   handleClick = () => {
     const formattedDate = moment(this.state.startDate).format("DD/MMM/YYYY");
@@ -91,7 +85,7 @@ class DateConfirmation extends React.Component {
     const formattedendTime = moment(this.state.endTime).format("hh:mm A");
     this.props.createDate(formattedDate);
     this.props.createTime(`${formattedStartTime} - ${formattedendTime}`);
-    this.props.history.push("/phoneRepair/zip-code");
+    this.props.clicker();
   };
 
   render() {
@@ -131,7 +125,7 @@ class DateConfirmation extends React.Component {
         <br />
         <br />
         <br />
-        <button onClick={() => this.handleClick()}>Next</button>
+        <button onClick={() => this.handleClick()}>Confirm Date and Time</button>
       </div>
     );
   }

@@ -18,3 +18,24 @@
   background-color: peachpuff;
   text-align: center;
 }
+
+.issues {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.box {
+  margin: 10px;
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  color: orangered;
+  border: 1px solid blue;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.no-pointer {
+  pointer-events: none;
+}

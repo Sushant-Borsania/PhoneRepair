@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 
 class StoreFetcher extends Component {
   render() {
-    console.log(this.props);
     return (
       <div className="container">
         <h2>Your Selection</h2>

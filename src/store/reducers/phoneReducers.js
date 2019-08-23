@@ -31,12 +31,7 @@ const initState = {
 };
 
 const phoneReducers = (state = initState, action) => {
-  switch (action.type) {
-    case "COMPANY_NAME":
-      return state;
-    default:
-      return state;
-  }
+  return state;
 };
 
 export default phoneReducers;

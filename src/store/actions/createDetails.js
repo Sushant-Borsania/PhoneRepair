@@ -30,6 +30,12 @@ export const createTime = details => {
   };
 };
 
+export const createCost = (details) => {
+  return dispatch => {
+    dispatch({ type: "CREATE_COST", details });
+  };
+};
+
 export const clearColor = () => {
   return dispatch => {
     dispatch({ type: "CLEAR_COLOR" });
