@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import { connect } from "react-redux";
 import moment from "moment";
 import CustomClass from "./CustomClass";
-import { addDays, setHours, setMinutes, addMinutes } from "date-fns";
+import { addDays, setHours, setMinutes, addMinutes, addSeconds, getMinutes, getHours } from "date-fns";
 import { createDate, createTime } from "../../store/actions/createDetails";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -14,8 +14,8 @@ class DateConfirmation extends React.Component {
     super(props);
     this.state = {
       startDate: this.calculateMinDate(),
-      startTime: this.calculateMinTime(new Date()),
-      endTime: addMinutes(new Date().setHours(10, 0), 15)
+      startTime: this.calculateMinTime(new Date())
+      // endTime: addMinutes(new Date().setHours(10, 0), 30)
     };
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleStartTimeChange = this.handleStartTimeChange.bind(this);
@@ -28,9 +28,12 @@ class DateConfirmation extends React.Component {
   }
 
   handleDateChange(date) {
-    this.setState({
-      startDate: date
-    }, () => this.calculateMinTime(this.state.startDate));
+    this.setState(
+      {
+        startDate: date
+      },
+      () => this.updateTime(this.state.startDate)
+    );
   }
 
   handleStartTimeChange(date) {
@@ -52,7 +55,7 @@ class DateConfirmation extends React.Component {
 
   //hours
   calculateMinDate = () => {
-    let endTime = moment("19:00", "HH:mm A");
+    let endTime = moment("23:00", "HH:mm A");
     if (moment().isAfter(endTime)) {
       let newDate = moment()
         .add(1, "d")
@@ -74,21 +77,38 @@ class DateConfirmation extends React.Component {
   };
 
   calculateMinTime = date => {
-
     let isToday = moment(date).isSame(moment(), "day");
-    console.log(isToday);
     let startTime = moment("10:00", "HH:mm A");
     let endTime = moment("23:00", "HH:mm A");
     if (isToday && moment().isBetween(startTime, endTime)) {
-      const nearestMin = this.nearestMinutes(15, moment()).toDate();
+      const nearestMin = this.nearestMinutes(30, moment()).toDate();
       let nowAddOneHour = moment(nearestMin)
         .add({ hours: 1 })
         .toDate();
-      console.log("Adding one hour");
       return nowAddOneHour;
     } else {
       let time = new Date().setHours(10, 0);
       return time;
+    }
+  };
+
+  updateTime = date => {
+    let isToday = moment(date).isSame(moment(), "day");
+    let startTime = moment("10:00", "HH:mm A");
+    let endTime = moment("23:00", "HH:mm A");
+    if (isToday && moment().isBetween(startTime, endTime)) {
+      const nearestMin = this.nearestMinutes(30, moment()).toDate();
+      let nowAddOneHour = moment(nearestMin)
+        .add({ hours: 1 })
+        .toDate();
+      this.setState({
+        startTime: nowAddOneHour
+      });
+    } else {
+      let time = new Date().setHours(10, 0);
+      this.setState({
+        startTime: time
+      });
     }
   };
 
@@ -102,7 +122,9 @@ class DateConfirmation extends React.Component {
   };
 
   render() {
-    this.calculateMinTime(new Date());
+    // this.calculateMinTime(new Date());
+    console.log("Getters", getHours(getMinutes(this.state.startDate)));
+    console.log(typeof this.state.startTime);
     return (
       <div className="DatePicker">
         <label htmlFor="">Date: </label>
@@ -120,12 +142,10 @@ class DateConfirmation extends React.Component {
         <DatePicker
           selected={this.state.startTime}
           onChange={this.handleStartTimeChange}
-          excludeOutOfBoundsTimes
           showTimeSelect
           showTimeSelectOnly
-          timeIntervals={15}
           minTime={this.state.startTime}
-          maxTime={setHours(setMinutes(new Date(), 0), 20)}
+          maxTime={setHours(setMinutes(new Date(), 0), 23)}
           dateFormat="h:mm aa"
         />
         <label htmlFor="">Time to: </label>
@@ -134,9 +154,8 @@ class DateConfirmation extends React.Component {
           onChange={this.handleTimeEndChange}
           showTimeSelect
           showTimeSelectOnly
-          timeIntervals={15}
           minTime={addMinutes(this.state.startTime, 30)}
-          maxTime={setHours(setMinutes(new Date(), 0), 20)}
+          maxTime={setHours(setMinutes(new Date(), 0), 23)}
           dateFormat="h:mm aa"
         />
         <br />
