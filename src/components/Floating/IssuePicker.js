@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { createCost } from "../../store/actions/createDetails";
+import { createCost, createIssues } from "../../store/actions/createDetails";
 import StoreFetcher from "./StoreFetcher";
 
 class IssuePicker extends Component {
@@ -59,10 +59,13 @@ class IssuePicker extends Component {
       },
       () => this.submitDetails()
     );
+    //arr of details submission
+    this.props.createIssues(filtered);
   }
 
   submitDetails = () => {
     console.log("ram");
+    //cost submission
     this.props.createCost(this.state.totalCost);
   };
   navigateBtn = path => {
@@ -102,7 +105,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createCost: details => dispatch(createCost(details))
+    createCost: details => dispatch(createCost(details)),
+    createIssues: details => dispatch(createIssues(details))
   };
 };
 

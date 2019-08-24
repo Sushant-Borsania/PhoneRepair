@@ -30,9 +30,15 @@ export const createTime = details => {
   };
 };
 
-export const createCost = (details) => {
+export const createCost = details => {
   return dispatch => {
     dispatch({ type: "CREATE_COST", details });
+  };
+};
+
+export const createIssues = details => {
+  return dispatch => {
+    dispatch({ type: "CREATE_ISSUE", details });
   };
 };
 
