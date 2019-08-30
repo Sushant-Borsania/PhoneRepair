@@ -20,23 +20,28 @@ app.get("/", (req, res) => {
 
 //email page
 app.post("/phoneRepair/address", (req, res) => {
-  const { Email, FirstName, LastName, Address, HomePermit, company, color, model } = req.body.data;
-  // console.log("query", req.body.data);
+  console.log(req.body.data);
+  const { Reference, Email, FirstName, LastName, Address, HomePermit, company, color, model, issues, cost, date, time } = req.body.data;
   //sendgrid reqs
   const msg = {
     to: Email,
+    cc: "cerebellum.flr@gmail.com",
     from: "sushant.yt@gmail.com",
     templateId: "d-724a46bd9d8e4b2ea388b56706d4f7a7",
     dynamic_template_data: {
       FirstName: FirstName,
       Email: Email,
-      Company: company,
-      Model: model,
-      Color: color,
-      Issue: "Issue",
+      company: company,
+      model: model,
+      color: color,
+      issues: issues,
       Address: Address,
-      Permit: HomePermit,
-      city: "Edmonton"
+      permit: HomePermit,
+      city: "Edmonton",
+      cost: cost,
+      date: date,
+      time: time,
+      Reference: Reference
     }
   };
   sgMail.send(msg);

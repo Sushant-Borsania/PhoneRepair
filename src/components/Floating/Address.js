@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { withFormik, Form, Field } from "formik";
 import { connect } from "react-redux";
+import generate from "nanoid/generate";
 import axios from "axios";
 
 import * as Yup from "yup";
@@ -11,7 +12,11 @@ class Address extends Component {
     const { isSubmitting, handleSubmit } = props;
   }
 
+  componentDidMount() {
+
+  }
   render() {
+    console.log(this.props);
     return (
       <Form className="container">
         <div>
@@ -51,6 +56,7 @@ class Address extends Component {
 const FormikForm = withFormik({
   mapPropsToValues(props) {
     return {
+      Reference: generate('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ', 9),
       FirstName: "",
       LastName: "",
       Email: "",
@@ -77,6 +83,7 @@ const FormikForm = withFormik({
     console.log("PRRRROPS", props);
     //Get the data
     const finalData = Object.assign({}, values, props.userSelections);
+    console.log("finalData", finalData);
     //Send the data to node server so that we can send email from server!
     axios
       .post("http://127.0.0.1:4000/phoneRepair/address", {
@@ -87,8 +94,7 @@ const FormikForm = withFormik({
         data: finalData
       })
       .then(function(response) {
-        console.log(response);
-        // alert('You sent an email!!');
+        console.log("from address js", response.config.data);
         setSubmitting(false);
         resetForm();
         props.history.push("/");
