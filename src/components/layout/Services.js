@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "../../css/compiledCss/Services.css";
 
 class Services extends Component {
   render() {

@@ -6,9 +6,6 @@ import CustomClass from "./CustomClass";
 import { addDays, setHours, setMinutes, addMinutes } from "date-fns";
 import { createDate, createTime } from "../../store/actions/createDetails";
 
-import "react-datepicker/dist/react-datepicker.css";
-import "../../css/compiledCss/DatePicker.css";
-
 class DateConfirmation extends React.Component {
   constructor(props) {
     super(props);
@@ -106,7 +103,7 @@ class DateConfirmation extends React.Component {
         .toDate();
       return nowAddOneHalfHour;
     } else {
-      let time = (new Date().setHours(10, 0), 30);
+      let time = setHours(setMinutes(new Date(), 30), 10);
       return time;
     }
   };
@@ -125,7 +122,7 @@ class DateConfirmation extends React.Component {
       });
     } else {
       let time = new Date().setHours(10, 0);
-      let et = (addMinutes(time, 30));
+      let et = addMinutes(time, 30);
       this.setState({
         startTime: time,
         endTime: et

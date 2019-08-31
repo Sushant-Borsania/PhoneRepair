@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DateConfirmation from "./DateConfirmation";
 import IssuePicker from "./IssuePicker";
 import StoreFetcher from "./StoreFetcher";
-
+import "react-datepicker/dist/react-datepicker.css";
 class DateIssue extends Component {
   state ={
     show: false

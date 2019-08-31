@@ -9,6 +9,7 @@ import ZipCode from "./components/Floating/ZipCode";
 import FormikForm from "./components/Floating/Address";
 import NoAddress from "./components/Floating/NoAddress";
 import DateIssue from "./components/Floating/DateIssue";
+import './App.scss';
 
 class App extends Component {
   render() {
