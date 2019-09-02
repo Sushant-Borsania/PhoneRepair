@@ -27,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "dev":"concurrently \"npm start\" \"cd server && nodemon index.js\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,6 +46,7 @@
     ]
   },
   "devDependencies": {
+    "concurrently": "^4.1.2",
     "node-sass": "^4.12.0"
   }
 }
