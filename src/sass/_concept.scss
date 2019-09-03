@@ -1,0 +1,41 @@
+.concept-container {
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  grid-gap: 2rem;
+  margin: 10rem 0;
+}
+.concept-heading {
+  font-size: 2.8rem;
+  font-family: $font-heading;
+  font-weight: 400;
+  color: #102a43;
+}
+.concept-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 4rem;
+
+  &_heading {
+    font-family: $font-heading;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  &_detail {
+    margin-bottom: 1rem;
+  }
+  &_subbutton {
+    font-size: 18px;
+    font-weight: 600;
+    color: #a61b1b;
+    cursor: pointer;
+  }
+}
+.concept-promotion {
+  background-color: #044e54;
+  color: #87eaf2;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}

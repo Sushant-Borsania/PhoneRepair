@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { createModel, clearColor } from "../../store/actions/createDetails";
-import StoreFetcher from "../Floating/StoreFetcher";
+// import StoreFetcher from "../Floating/StoreFetcher";
 
 class PhoneSelection extends Component {
   constructor(props) {

@@ -2,10 +2,21 @@ export default [
   {
     comapnyName: "Samsung",
     id: "samsung",
+    phones: [{ phoneName: "s8", colors: ["red", "green", "violet"] }, { phoneName: "s9", colors: ["pink", "orange", "black"] }, { phoneName: "s10", colors: ["blue", "yellow", "green"] }]
+  },
+  {
+    comapnyName: "Apple",
+    id: "apple",
     phones: [
-      { phoneName: "s8", colors: ["red", "green", "violet"] },
-      { phoneName: "s9", colors: ["pink", "orange", "black"] },
-      { phoneName: "s10", colors: ["blue", "yellow", "green"] }]
+      { phoneName: "Iphone8", colors: ["red", "green", "violet"] },
+      { phoneName: "Iphone9", colors: ["pink", "orange", "black"] },
+      { phoneName: "Iphone10", colors: ["blue", "yellow", "green"] }
+    ]
+  },
+  {
+    comapnyName: "Razor",
+    id: "apple",
+    phones: [{ phoneName: "z8", colors: ["red", "green", "violet"] }, { phoneName: "z9", colors: ["pink", "orange", "black"] }, { phoneName: "z10", colors: ["blue", "yellow", "green"] }]
   },
   {
     comapnyName: "Apple",
@@ -14211,4 +14222,3 @@ const EdmontonZip = [
   "T6W 3S2",
   "T6W 3S6"
 ];
-

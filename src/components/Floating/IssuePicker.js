@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createCost, createIssues } from "../../store/actions/createDetails";
-import StoreFetcher from "./StoreFetcher";
+// import StoreFetcher from "./StoreFetcher";
 
 class IssuePicker extends Component {
   constructor(props) {

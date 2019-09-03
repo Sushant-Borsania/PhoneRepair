@@ -1,0 +1,30 @@
+.technician-container {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  margin-top: 10rem;
+}
+
+.technician-heading {
+  font-size: 2.8rem;
+  font-family: $font-heading;
+  font-weight: 400;
+  color: #102a43;
+  margin-bottom: 4rem;
+}
+
+.technician-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-gap: 4rem;
+  justify-items: center;
+  & > * {
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    justify-items: center;
+  }
+}
+
+.tech-img {
+  height: 12rem;
+  width: 12rem;
+}

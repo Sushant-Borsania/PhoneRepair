@@ -1,0 +1,100 @@
+.container {
+  .navigation {
+    display: flex;
+    padding: 1rem;
+  }
+  .navigation-right {
+    display: flex;
+    .navigation-list {
+      list-style: none;
+      &__item {
+        display: inline-block;
+        text-decoration: none;
+        color: $light-blue;
+        &:not(:last-child) {
+          margin-right: 2rem;
+        }
+      }
+    }
+  }
+  .navigation-left {
+    margin-right: auto;
+  }
+  .navigation-right .navigation-list__item.active {
+    color: red;
+    border-bottom: 4px solid $border-color;
+  }
+  .container-small .navigation-list__item.active {
+    color: red;
+    border-bottom: 4px solid $border-color;
+  }
+  .container-small {
+    display: none;
+    position: relative;
+    .toggler {
+      position: fixed;
+      right: 11px;
+      z-index: 6;
+      display: none;
+      margin-left: auto;
+    }
+    .navigation-small {
+      background-color: hsl(200, 10%, 94%);
+      padding: 2rem;
+      box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+      position: fixed;
+      top: 20px;
+      right: 25px;
+      z-index: 5;
+      animation: bounce-out 400ms ease-in-out 100ms;
+      animation-fill-mode: forwards;
+      transform: scale(0);
+      transform-origin: top right;
+
+      .small-lists {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        transition: all 2s;
+        .small-list {
+          padding: 1rem;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  @keyframes bounce-out {
+    0% {
+      transform: scale(0);
+    }
+    75% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  .hidden {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    .container-small {
+      display: block;
+      .toggler {
+        display: block;
+        font-family: inherit;
+        background-color: white;
+        padding: 0.5rem;
+        border: none;
+        box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.2);
+        outline: none;
+      }
+    }
+    .navigation-right {
+      display: none;
+    }
+  }
+}

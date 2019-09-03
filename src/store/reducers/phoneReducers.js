@@ -26,6 +26,20 @@ const initState = {
         { phoneName: "G3", alias: "g3", colors: ["pink", "orange", "black"] },
         { phoneName: "G4", alias: "g4", colors: ["blue", "yellow", "green"] }
       ]
+    },
+    {
+      companyName: "Razor",
+      id: "razor",
+      phones: [{ phoneName: "z8", colors: ["red", "green", "violet"] }, { phoneName: "z9", colors: ["pink", "orange", "black"] }, { phoneName: "z10", colors: ["blue", "yellow", "green"] }]
+    },
+    {
+      companyName: "OnePlus",
+      id: "oneplus",
+      phones: [
+        { phoneName: "Iphone8", colors: ["red", "green", "violet"] },
+        { phoneName: "Iphone9", colors: ["pink", "orange", "black"] },
+        { phoneName: "Iphone10", colors: ["blue", "yellow", "green"] }
+      ]
     }
   ]
 };

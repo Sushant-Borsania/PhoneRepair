@@ -1,34 +1,48 @@
-.container {
-  background-color: antiquewhite;
-  color: green;
-  padding: 10px;
+.services-container {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  margin-top: 10rem;
 }
 
-.details {
-  display: flex;
-  justify-content: space-around;
+.services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 2rem;
   & > * {
-    height: 100px;
-    width: 100px;
-    background-color: peachpuff;
-    text-align: center;
+    display: grid;
+    grid-template-rows: repeat(2, max-content);
+    justify-content: center;
+    // background-color: aqua;
+    justify-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color:  inherit;
+    &:not(:last-child) {
+      border-right: 2px solid #f0f4f8;
+    }
   }
 }
-.issues {
-  display: flex;
+
+.service-icon {
+  height: 4rem;
+  width: 4rem;
+  justify-self: center;
+  align-self: center;
+  fill: #38BEC9;
 }
 
-.box {
-  margin: 10px;
-  height: 150px;
-  width: 150px;
-  background-color: white;
-  color: orangered;
-  border: 1px solid blue;
-  text-align: center;
-  border-radius: 10px;
+.service-header {
+  font-family: $font-primary;
+  font-size: 1.8rem;
+  font-weight: normal;
+  // text-align: center;
+  margin: 2rem 0;
 }
 
-.no-pointer {
-  pointer-events: none;
+.services-heading {
+  font-size: 2.8rem;
+  font-family: $font-heading;
+  font-weight: 400;
+  color: #102a43;
+  margin-bottom: 5rem;
 }

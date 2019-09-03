@@ -1,4 +1,20 @@
 @import "./sass/base";
-@import "./sass/services";
 @import "./sass/dateconfimration";
 // @import "./sass/datepicker";
+
+//Component imports
+//Navbar
+@import "./sass/navbar";
+//Hero
+@import "./sass/_hero";
+//Concept
+@import "./sass/concept";
+//Services
+@import "./sass/services";
+//Technician
+@import "./sass/technician";
+//Footer
+@import "./sass/footer";
+
+//Phone repair
+@import "./sass/phoneRepair";

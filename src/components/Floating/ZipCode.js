@@ -19,7 +19,7 @@ class ZipCode extends Component {
 
   handleChange(event) {
     const val = event.target.value;
-    const newVal = val.toUpperCase().replace(/\W/g,'').replace(/(...)/,'$1 ')
+    // const newVal = val.toUpperCase().replace(/\W/g,'').replace(/(...)/,'$1 ')
     this.setState({ value: val }, this.checkService(val));
   }
 
