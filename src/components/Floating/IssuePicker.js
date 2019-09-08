@@ -76,19 +76,33 @@ class IssuePicker extends Component {
     const isState = this.props.userSelections.cost;
     let btn;
     if (isState) {
-      btn = <button onClick={() => this.navigateBtn("/phoneRepair/zip-code")}>Next</button>;
+      btn = (
+        <button className="btn-3" onClick={() => this.navigateBtn("/phoneRepair/zip-code")}>
+          Next
+        </button>
+      );
     } else {
-      btn = <button disabled>Please select the issue</button>;
+      btn = (
+        <button className="btn-3" disabled>
+          Please select the issue
+        </button>
+      );
     }
     return (
-      <div className="container">
-        <div className="issues">
+      <div className="date-container">
+        <div className="issues date-details">
           {this.state.issues.map((issue, key) => (
-            <div className="issues" key={key}>
-              <div className="box" id={key} onClick={e => this.handleClick(e, key)}>
+            <div className="box-issues" key={key}>
+              <div className="box-issue" id={key} onClick={e => this.handleClick(e, key)}>
+                {issue.isSelected ? (
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="issue-icon">
+                    <use xlinkHref={`${"/images/sprite.svg#icon-mobile"}`}></use>
+                  </svg>
+                ) : (
+                  <span>&nbsp;</span>
+                )}
                 <p>{issue.name}</p>
-                <p>{issue.cost}</p>
-                {issue.isSelected ? <p> Yes</p> : <p>No</p>}
+                <p>${issue.cost}</p>
               </div>
             </div>
           ))}

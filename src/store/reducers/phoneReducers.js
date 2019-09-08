@@ -6,7 +6,14 @@ const initState = {
       phones: [
         { phoneName: "Galaxy s8", alias: "s8", colors: ["red", "green", "violet"] },
         { phoneName: "Galaxy s9", alias: "s9", colors: ["pink", "orange", "black"] },
-        { phoneName: "Galaxy s10", alias: "s10", colors: ["blue", "yellow", "green"] }
+        { phoneName: "Galaxy s10", alias: "s10", colors: ["blue", "yellow", "green"] },
+        { phoneName: "Galaxy Note 10", alias: "s10", colors: ["blue", "yellow", "green"] },
+        { phoneName: "Galaxy Note 7", alias: "s10", colors: ["blue", "yellow", "green"] },
+        { phoneName: "Galaxy Note 9", alias: "s10", colors: ["blue", "yellow", "green"] },
+        { phoneName: "Galaxy Golden", alias: "s10", colors: ["blue", "yellow", "green"] },
+        { phoneName: "Galaxy Edge", alias: "s10", colors: ["blue", "yellow", "green"] },
+        { phoneName: "Galaxy A8", alias: "s10", colors: ["blue", "yellow", "green"] },
+        { phoneName: "Galaxy A9", alias: "s10", colors: ["blue", "yellow", "green"] }
       ]
     },
     {
@@ -15,7 +22,12 @@ const initState = {
       phones: [
         { phoneName: "Iphone8", alias: "i8", colors: ["red", "green", "violet"] },
         { phoneName: "Iphone9", alias: "i9", colors: ["pink", "orange", "black"] },
-        { phoneName: "Iphone10", alias: "i10", colors: ["blue", "yellow", "green"] }
+        { phoneName: "Iphone10", alias: "i10", colors: ["blue", "yellow", "green"] },
+        { phoneName: "IphoneX", alias: "iX", colors: ["blue", "yellow", "green"] },
+        { phoneName: "Iphone 7", alias: "i7", colors: ["blue", "yellow", "green"] },
+        { phoneName: "XR", alias: "XR", colors: ["blue", "yellow", "green"] },
+        { phoneName: "XS", alias: "XS", colors: ["blue", "yellow", "green"] },
+        { phoneName: "XS max", alias: "XS-MAX", colors: ["blue", "yellow", "green"] }
       ]
     },
     {

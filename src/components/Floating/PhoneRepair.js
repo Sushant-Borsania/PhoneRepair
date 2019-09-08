@@ -24,6 +24,7 @@ class PhoneRepair extends Component {
         </div>
         <div className="details">
           <h2>We repair below brands:</h2>
+          
           <div className="details-pr">
             {this.props.companyName.project.map((company, key) => {
               return (

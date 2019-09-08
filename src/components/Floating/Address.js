@@ -12,16 +12,13 @@ class Address extends Component {
     const { isSubmitting, handleSubmit } = props;
   }
 
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
   render() {
-    console.log(this.props);
     return (
       <Form className="container">
         <div>
-          {this.props.touched.FirstName && this.props.errors.FirstName && <p>{this.props.errors.FirstName}</p>}
           <Field type="text" name="FirstName" placeholder="FirstName" /> <br />
+          {this.props.touched.FirstName && this.props.errors.FirstName && <p>{this.props.errors.FirstName}</p>}
         </div>
         <div>
           {this.props.touched.LastName && this.props.errors.LastName && <p>{this.props.errors.LastName}</p>}
@@ -56,7 +53,7 @@ class Address extends Component {
 const FormikForm = withFormik({
   mapPropsToValues(props) {
     return {
-      Reference: generate('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ', 9),
+      Reference: generate("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ", 9),
       FirstName: "",
       LastName: "",
       Email: "",

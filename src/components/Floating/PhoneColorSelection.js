@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createColor } from "../../store/actions/createDetails";
+import Footer from "../layout/Footer";
 import StoreFetcher from "../Floating/StoreFetcher";
 
 class PhoneColorSelection extends Component {
@@ -23,30 +24,61 @@ class PhoneColorSelection extends Component {
     const isState = this.props.userSelections.color;
     let btn;
     if (isState) {
-      btn = <button onClick={() => this.navigateBtn("/phoneRepair/date-and-issue")}>Next</button>;
+      btn = <button className="color-selection" onClick={() => this.navigateBtn("/phoneRepair/date-and-issue")}>Next</button>;
     } else {
-      btn = <button disabled>Please select color</button>;
+      btn = <button className="color-selection" disabled>Please select color</button>;
     }
     return (
-      <div className="container">
-        <div className="details">
-          {colors.map((color, key) => {
-            return (
-              <div key={key} className="container" onClick={() => this.handleClick(key)}>
-                <div
-                  ref={ref => {
-                    this.phoneColor[key] = ref;
-                  }}
-                >
-                  {color}
-                </div>
-              </div>
-            );
-          })}
+      <div className="wrapper-ps">
+         <div className="container-pr-2">
+          <div className="left-content">
+            <div className="heading-pr">
+              <h2>Please let us know which model you want us to repair?</h2>
+            </div>
+            <div className="details-pr">
+              {colors.map((color, key) => {
+                return (
+                  <div key={key} className="details-pr__item" onClick={() => this.handleClick(key)}>
+                    <div
+                      ref={ref => {
+                        this.phoneColor[key] = ref;
+                      }}
+                    >
+                      {color}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <h4 className="sub-headings">You pay only after device get repaired!</h4>
+            {btn}
+          </div>
+          <div className="floater">
+            <StoreFetcher className="floater" />
+          </div>
         </div>
-        {btn}
-        <StoreFetcher className="floater"/>
+        <Footer />
       </div>
+
+      // <div className="container">
+      //   <div className="details">
+      //     {colors.map((color, key) => {
+      //       return (
+      //         <div key={key} className="container" onClick={() => this.handleClick(key)}>
+      //           <div
+      //             ref={ref => {
+      //               this.phoneColor[key] = ref;
+      //             }}
+      //           >
+      //             {color}
+      //           </div>
+      //         </div>
+      //       );
+      //     })}
+      //   </div>
+      //   {btn}
+      //   <StoreFetcher className="floater"/>
+      // </div>
     );
   }
 }

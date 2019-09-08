@@ -1,0 +1,31 @@
+.wrapper-ps {
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  background-color: white;
+  max-width: 140rem;
+  margin: auto;
+  padding: 2rem;
+  padding-top: 0;
+ min-height: 90vh;
+}
+.container-pr-2 {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  margin-bottom: 2rem;
+}
+.floater {
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+}
+
+.heading-pr-i {
+  background: #38bec9;
+  color: #044e54;
+  font-family: $font-heading;
+  font-size: 1.3rem;
+  padding: 2rem 2rem 2rem 0;
+  text-align: center;
+}
+.floater-detail {
+  margin-left: 2rem;
+}

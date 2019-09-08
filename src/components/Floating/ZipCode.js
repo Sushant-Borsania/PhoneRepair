@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import StoreFetcher from './StoreFetcher';
+import StoreFetcher from "./StoreFetcher";
+import Footer from "../layout/Footer";
 
 class ZipCode extends Component {
   constructor(props) {
@@ -7,14 +8,17 @@ class ZipCode extends Component {
     this.state = {
       value: "",
       isEdmonton: null
-     };
+    };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkService = this.checkService.bind(this);
   }
-  checkService(val){
-    let e = val.toUpperCase().replace(/\W/g,'').replace(/(...)/,'$1 ')
-    zipset.has(e) ? this.setState ({isEdmonton : true}) : this.setState ({isEdmonton: false});
+  checkService(val) {
+    let e = val
+      .toUpperCase()
+      .replace(/\W/g, "")
+      .replace(/(...)/, "$1 ");
+    zipset.has(e) ? this.setState({ isEdmonton: true }) : this.setState({ isEdmonton: false });
   }
 
   handleChange(event) {
@@ -25,25 +29,43 @@ class ZipCode extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('After Checking', this.state.isEdmonton);
+    console.log("After Checking", this.state.isEdmonton);
     this.state.isEdmonton ? this.props.history.push("/phoneRepair/address") : this.props.history.push("/phoneRepair/thankyou");
   }
 
   render() {
     return (
-      <div className="container">
-      <form onSubmit={this.handleSubmit}>
-        <input type="text" value={this.state.value} placeholder="Zip Code" onChange={this.handleChange} />
-        <input type="submit" value="Submit" />
-      </form>
-      <StoreFetcher/>
+      <div className="wrapper-ps">
+        <div className="container-pr-2">
+          <div className="left-content align-start">
+            <div className="heading-pr">
+              <h2>We provide service only in Edmonton area currently, please let us know the zipcode</h2>
+            </div>
+            <div className="details-pr">
+              <form onSubmit={this.handleSubmit}>
+                <input className="zip-input" type="text" maxlength= "6" value={this.state.value} placeholder="T6W3H9" onChange={this.handleChange} />
+                <input className="zip-input-submit btn-2" type="submit" value="Submit" />
+              </form>
+            </div>
+          </div>
+            <div className="floater">
+              <StoreFetcher className="floater" />
+            </div>
+        </div>
+        <Footer />
       </div>
+      // <div className="container">
+      // <form onSubmit={this.handleSubmit}>
+      //   <input type="text" value={this.state.value} placeholder="Zip Code" onChange={this.handleChange} />
+      //   <input type="submit" value="Submit" />
+      // </form>
+      // <StoreFetcher/>
+      // </div>
     );
   }
 }
 
 export default ZipCode;
-
 
 const EdmontonZip = [
   "T5A 0A1",

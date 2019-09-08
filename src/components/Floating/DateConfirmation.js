@@ -118,7 +118,8 @@ class DateConfirmation extends React.Component {
         .add({ hours: 1 })
         .toDate();
       this.setState({
-        startTime: nowAddOneHour
+        startTime: nowAddOneHour,
+        endTime: addMinutes(nowAddOneHour, 30)
       });
     } else {
       let time = new Date().setHours(10, 0);
@@ -141,42 +142,48 @@ class DateConfirmation extends React.Component {
 
   render() {
     return (
-      <div className="DatePicker">
-        <label htmlFor="">Date: </label>
-        <DatePicker
-          customInput={<CustomClass />}
-          selected={this.state.startDate}
-          onChange={this.handleDateChange}
-          minDate={new Date()}
-          maxDate={addDays(new Date(), 5)}
-          placeholderText="Select a date between today and 5 days in the future"
-        />
-        <br />
-        <br />
-        <label htmlFor="">Time from: </label>
-        <DatePicker
-          selected={this.state.startTime}
-          onChange={this.handleStartTimeChange}
-          showTimeSelect
-          showTimeSelectOnly
-          minTime={this.state.startTime}
-          maxTime={setHours(setMinutes(new Date(), 0), 18)}
-          dateFormat="h:mm aa"
-        />
-        <label htmlFor="">Time to: </label>
-        <DatePicker
-          selected={this.state.endTime}
-          onChange={this.handleTimeEndChange}
-          showTimeSelect
-          showTimeSelectOnly
-          minTime={addMinutes(this.state.startTime, 30)}
-          maxTime={setHours(setMinutes(new Date(), 30), 18)}
-          dateFormat="h:mm aa"
-        />
-        <br />
-        <br />
-        <br />
-        <button onClick={() => this.handleClick()}>Confirm Date and Time</button>
+      <div className="date-container">
+          <div className="heading-pr">
+            <h2>Let us know when do you want us to come?</h2>
+          </div>
+          <div className="DatePicker date-details">
+            <div className="date-detail">
+              <label htmlFor="">Date: </label>
+              <DatePicker
+                customInput={<CustomClass />}
+                selected={this.state.startDate}
+                onChange={this.handleDateChange}
+                minDate={new Date()}
+                maxDate={addDays(new Date(), 5)}
+                placeholderText="Select a date between today and 5 days in the future"
+              />
+            </div>
+            <div className="date-detail">
+              <label htmlFor="">Time from: </label>
+              <DatePicker
+                selected={this.state.startTime}
+                onChange={this.handleStartTimeChange}
+                showTimeSelect
+                showTimeSelectOnly
+                minTime={this.state.startTime}
+                maxTime={setHours(setMinutes(new Date(), 0), 18)}
+                dateFormat="h:mm aa"
+              />
+            </div>
+            <div className="date-detail">
+              <label htmlFor="">Time to: </label>
+              <DatePicker
+                selected={this.state.endTime}
+                onChange={this.handleTimeEndChange}
+                showTimeSelect
+                showTimeSelectOnly
+                minTime={addMinutes(this.state.startTime, 30)}
+                maxTime={setHours(setMinutes(new Date(), 30), 18)}
+                dateFormat="h:mm aa"
+              />
+            </div>
+            <button className="btn-2" onClick={() => this.handleClick()}>Confirm Date and Time</button>
+          </div>
       </div>
     );
   }
