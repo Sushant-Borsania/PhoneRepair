@@ -20,7 +20,6 @@ app.get("/", (req, res) => {
 
 //email page
 app.post("/phoneRepair/address", (req, res) => {
-  console.log(req.body.data);
   const { Reference, Email, FirstName, LastName, Address, HomePermit, company, color, model, issues, cost, date, time } = req.body.data;
   //sendgrid reqs
   const msg = {
@@ -45,6 +44,7 @@ app.post("/phoneRepair/address", (req, res) => {
     }
   };
   sgMail.send(msg);
+  console.log(res.status);
   res.send("Data received");
 });
 

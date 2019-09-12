@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import Footer from "../layout/Footer";
 class DateIssue extends Component {
   state = {
-    show: true
+    show: false
   };
 
   clicker = () => {

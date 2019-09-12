@@ -90,13 +90,16 @@ class IssuePicker extends Component {
     }
     return (
       <div className="date-container">
+        <h2 className="sub-headings">
+          Please let us know the issue(s) with device.
+        </h2>
         <div className="issues date-details">
           {this.state.issues.map((issue, key) => (
             <div className="box-issues" key={key}>
               <div className="box-issue" id={key} onClick={e => this.handleClick(e, key)}>
                 {issue.isSelected ? (
                   <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="issue-icon">
-                    <use xlinkHref={`${"/images/sprite.svg#icon-mobile"}`}></use>
+                    <use xlinkHref={`${"/images/sprite.svg#icon-checkmark"}`}></use>
                   </svg>
                 ) : (
                   <span>&nbsp;</span>

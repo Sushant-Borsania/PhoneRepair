@@ -43,7 +43,7 @@ class ZipCode extends Component {
             </div>
             <div className="details-pr">
               <form onSubmit={this.handleSubmit}>
-                <input className="zip-input" type="text" maxlength= "6" value={this.state.value} placeholder="T6W3H9" onChange={this.handleChange} />
+                <input className="zip-input" type="text" maxLength= "6" value={this.state.value} placeholder="ZipCode" onChange={this.handleChange} />
                 <input className="zip-input-submit btn-2" type="submit" value="Submit" />
               </form>
             </div>

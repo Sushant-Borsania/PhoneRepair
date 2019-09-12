@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { withFormik, Form, Field } from "formik";
 import { connect } from "react-redux";
 import generate from "nanoid/generate";
+import Footer from "../layout/Footer";
+import StoreFetcher from "../Floating/StoreFetcher";
 import axios from "axios";
 
 import * as Yup from "yup";
@@ -11,41 +13,65 @@ class Address extends Component {
     super(props);
     const { isSubmitting, handleSubmit } = props;
   }
-
-  componentDidMount() {}
   render() {
     return (
-      <Form className="container">
-        <div>
-          <Field type="text" name="FirstName" placeholder="FirstName" /> <br />
-          {this.props.touched.FirstName && this.props.errors.FirstName && <p>{this.props.errors.FirstName}</p>}
+      <div className="wrapper-ps">
+        <div className="container-pr-2">
+          <div className="left-content">
+            <div className="heading-pr">
+              <h2>Please let us know the address.</h2>
+            </div>
+            <div className="details-pr-2">
+              <Form className="form">
+                <div className="form-field">
+                  <label htmlFor="firstName" style={{ display: "block" }}>
+                    FirstName
+                  </label>
+                  <Field className={this.props.touched.FirstName && this.props.errors.FirstName ? "text-input error" : "text-input"} id="firstName" type="text" name="FirstName" />
+                  {this.props.touched.FirstName && this.props.errors.FirstName && <p>{this.props.errors.FirstName}</p>}
+                </div>
+                <div className="form-field">
+                  <label htmlFor="LastName" style={{ display: "block" }}>
+                    LastName
+                  </label>
+                  <Field className={this.props.touched.LastName && this.props.errors.LastName ? "text-input error" : "text-input"} id="LastName" type="text" name="LastName" />
+                  {this.props.touched.LastName && this.props.errors.LastName && <p>{this.props.errors.LastName}</p>}
+                </div>
+                <div className="form-field">
+                  <label htmlFor="email" style={{ display: "block" }}>
+                    Email
+                  </label>
+                  <Field className={this.props.touched.Email && this.props.errors.Email ? "text-input error" : "text-input"} id="email" type="email" name="Email" />
+                  {this.props.touched.Email && this.props.errors.Email && <p>{this.props.errors.Email}</p>}
+                </div>
+                <div className="form-field">
+                  <label htmlFor="address" style={{ display: "block" }}>
+                    Address
+                  </label>
+                  <Field className={this.props.touched.Address && this.props.errors.Address ? "text-input error" : "text-input"} id="address" type="text" name="Address" />
+                  {this.props.touched.Address && this.props.errors.Address && <p>{this.props.errors.Address}</p>}
+                </div>
+                <div className="form-field">
+                  <label>Where do we work? In our car or your home?</label>
+                  <Field component="select" name="permit">
+                    <option value="Car">Car</option>
+                    <option value="Home">Home</option>
+                  </Field>
+                </div>
+                <button type="submit" disabled={this.props.isSubmitting} className="btn-2">
+                  Submit
+                </button>
+              </Form>
+            </div>
+          </div>
+          <div className="floater">
+            <StoreFetcher />
+          </div>
         </div>
-        <div>
-          {this.props.touched.LastName && this.props.errors.LastName && <p>{this.props.errors.LastName}</p>}
-          <Field type="text" name="LastName" placeholder="LastName" />
-          <br />
+        <div className="footer">
+          <Footer />
         </div>
-        <div>
-          {this.props.touched.Email && this.props.errors.Email && <p>{this.props.errors.Email}</p>}
-          <Field type="email" name="Email" placeholder="Email Address" />
-        </div>
-        <br />
-        <Field type="text" name="Address" placeholder="Address" />
-        <br />
-        <label>
-          <br />
-          Would you permit us to work in your house?
-          <Field type="checkbox" name="HomePermit" checked={this.props.values.HomePermit} />
-        </label>
-        <br />
-        <label>Where do we work? In our car or your home?</label>
-        <Field component="select" name="permit">
-          <option value="Car">Car</option>
-          <option value="Home">Home</option>
-        </Field>
-        <br />
-        <button disabled={this.props.isSubmitting}>Submit</button>
-      </Form>
+      </div>
     );
   }
 }
@@ -77,10 +103,10 @@ const FormikForm = withFormik({
   }),
 
   handleSubmit(values, { props, setSubmitting, resetForm }) {
-    console.log("PRRRROPS", props);
+    // console.log("PRRRROPS", props);
     //Get the data
     const finalData = Object.assign({}, values, props.userSelections);
-    console.log("finalData", finalData);
+    // console.log("finalData", finalData);
     //Send the data to node server so that we can send email from server!
     axios
       .post("http://127.0.0.1:4000/phoneRepair/address", {
@@ -91,7 +117,7 @@ const FormikForm = withFormik({
         data: finalData
       })
       .then(function(response) {
-        console.log("from address js", response.config.data);
+        // console.log("from address js", response.config.data);
         setSubmitting(false);
         resetForm();
         props.history.push("/");

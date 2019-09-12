@@ -16,7 +16,10 @@ export default class Navbar extends Component {
       <div className="container">
         <nav className="navigation big">
           <div className="navigation-left">
-            <p>LOGO</p>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="service-icon">
+              <use xlinkHref={`${"images/sprite.svg#icon-codepen"}`}></use>
+            </svg>
+            <h2 className="brand-name">Fix@doorstep</h2>
           </div>
           <div className="navigation-right">
             <ul className="navigation-list">
