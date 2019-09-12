@@ -51,9 +51,9 @@ class Address extends Component {
                   <Field className={this.props.touched.Address && this.props.errors.Address ? "text-input error" : "text-input"} id="address" type="text" name="Address" />
                   {this.props.touched.Address && this.props.errors.Address && <p>{this.props.errors.Address}</p>}
                 </div>
-                <div className="form-field">
+                <div className="form-field custom-flex">
                   <label>Where do we work? In our car or your home?</label>
-                  <Field component="select" name="permit">
+                  <Field component="select" name="permit" className="selection-btn">
                     <option value="Car">Car</option>
                     <option value="Home">Home</option>
                   </Field>
@@ -103,10 +103,8 @@ const FormikForm = withFormik({
   }),
 
   handleSubmit(values, { props, setSubmitting, resetForm }) {
-    // console.log("PRRRROPS", props);
     //Get the data
     const finalData = Object.assign({}, values, props.userSelections);
-    // console.log("finalData", finalData);
     //Send the data to node server so that we can send email from server!
     axios
       .post("http://127.0.0.1:4000/phoneRepair/address", {
@@ -117,10 +115,9 @@ const FormikForm = withFormik({
         data: finalData
       })
       .then(function(response) {
-        // console.log("from address js", response.config.data);
         setSubmitting(false);
         resetForm();
-        props.history.push("/");
+        props.history.push("/phoneRepair/ThankYou");
       })
       .catch(function(error) {
         console.log(error.response);

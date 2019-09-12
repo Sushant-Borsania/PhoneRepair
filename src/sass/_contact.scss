@@ -1,0 +1,8 @@
+.contact-container {
+  display: grid;
+  background-color: white;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  justify-items: center;
+}

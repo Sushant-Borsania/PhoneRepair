@@ -64,8 +64,6 @@ class IssuePicker extends Component {
   }
 
   submitDetails = () => {
-    console.log("ram");
-    //cost submission
     this.props.createCost(this.state.totalCost);
   };
   navigateBtn = path => {
@@ -88,14 +86,14 @@ class IssuePicker extends Component {
         </button>
       );
     }
+
     return (
-      <div className="date-container">
-        <h2 className="sub-headings">
-          Please let us know the issue(s) with device.
-        </h2>
+      <div className="issue-container">
+        <h2 className="sub-headings">Please let us know the issue(s) with device.</h2>
         <div className="issues date-details">
           {this.state.issues.map((issue, key) => (
             <div className="box-issues" key={key}>
+
               <div className="box-issue" id={key} onClick={e => this.handleClick(e, key)}>
                 {issue.isSelected ? (
                   <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="issue-icon">
@@ -104,8 +102,8 @@ class IssuePicker extends Component {
                 ) : (
                   <span>&nbsp;</span>
                 )}
-                <p>{issue.name}</p>
-                <p>${issue.cost}</p>
+                <p className="issue-details">{issue.name}</p>
+                <p className="issue-details">${issue.cost}</p>
               </div>
             </div>
           ))}

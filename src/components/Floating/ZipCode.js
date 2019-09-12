@@ -30,7 +30,7 @@ class ZipCode extends Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log("After Checking", this.state.isEdmonton);
-    this.state.isEdmonton ? this.props.history.push("/phoneRepair/address") : this.props.history.push("/phoneRepair/thankyou");
+    this.state.isEdmonton ? this.props.history.push("/phoneRepair/address") : this.props.history.push("/phoneRepair/noservice");
   }
 
   render() {
@@ -41,7 +41,7 @@ class ZipCode extends Component {
             <div className="heading-pr">
               <h2>We provide service only in Edmonton area currently, please let us know the zipcode</h2>
             </div>
-            <div className="details-pr">
+            <div className="details-pr zip-details">
               <form onSubmit={this.handleSubmit}>
                 <input className="zip-input" type="text" maxLength= "6" value={this.state.value} placeholder="ZipCode" onChange={this.handleChange} />
                 <input className="zip-input-submit btn-2" type="submit" value="Submit" />

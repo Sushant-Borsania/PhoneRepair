@@ -17,7 +17,7 @@ export default class Navbar extends Component {
         <nav className="navigation big">
           <div className="navigation-left">
             <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="service-icon">
-              <use xlinkHref={`${"images/sprite.svg#icon-codepen"}`}></use>
+              <use xlinkHref={`${"/images/sprite.svg#icon-codepen"}`}></use>
             </svg>
             <h2 className="brand-name">Fix@doorstep</h2>
           </div>
@@ -26,10 +26,10 @@ export default class Navbar extends Component {
               <NavLink to="/" exact className="navigation-list__item">
                 <li>Home</li>
               </NavLink>
-              <NavLink to="/about" className="navigation-list__item">
+              {/* <NavLink to="/about" className="navigation-list__item">
                 <li>About</li>
-              </NavLink>
-              <NavLink to="/services" className="navigation-list__item">
+              </NavLink> */}
+              <NavLink to="/phoneRepair" className="navigation-list__item">
                 <li>Services</li>
               </NavLink>
               <NavLink to="/ContactMe" className="navigation-list__item">

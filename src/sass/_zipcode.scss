@@ -1,8 +1,8 @@
-.align-start{
+.align-start {
   align-content: start;
 }
 
-.zip-input{
+.zip-input {
   padding: 0 2rem;
   border: none;
   border-bottom: 2px solid #044e54;
@@ -10,9 +10,18 @@
   font-size: 2.4rem;
   text-transform: uppercase;
   display: block;
-  margin: 1rem;
+  margin: 2rem;
 }
 
-::placeholder{
-  color:#d6e1ec;
+::placeholder {
+  color: #d6e1ec;
+}
+
+
+.zip-details {
+  margin-bottom: 2rem;
+}
+
+.zip-input-submit{
+  width: 95%;
 }

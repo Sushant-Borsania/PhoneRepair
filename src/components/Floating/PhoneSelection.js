@@ -22,12 +22,10 @@ class PhoneSelection extends Component {
     return (
       <div className="wrapper-ps">
         <div className="container-pr-2">
-          <div>
+          <div className="inner-container">
             <div className="heading-pr">
               <h2>Please let us know which model you want us to repair?</h2>
-
             </div>
-
             <div className="details-pr">
               {this.props.companyName.phoneReducers.project.map(phone => {
                 if (phone.id === this.props.match.params.brand) {
