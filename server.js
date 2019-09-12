@@ -5,6 +5,7 @@ require("dotenv").config();
 var path = require("path");
 
 const app = express();
+const port = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -57,4 +58,4 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(4000, () => console.log("running on port 4000"));
+app.listen(port, () => console.log(`Listening on port ${port}`));
