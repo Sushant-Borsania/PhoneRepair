@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const sgMail = require("@sendgrid/mail");
 require("dotenv").config();
+var path = require("path");
 
 const app = express();
 app.use(express.json());
@@ -46,13 +47,13 @@ app.post("/phoneRepair/address", (req, res) => {
   res.send("Data received");
 });
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   // Serve any static files
-  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.use(express.static(path.join(__dirname, "client/build")));
 
   // Handle React routing, return all requests to React app
-  app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
   });
 }
 
