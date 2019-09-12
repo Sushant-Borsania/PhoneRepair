@@ -3,8 +3,6 @@ const cors = require("cors");
 const sgMail = require("@sendgrid/mail");
 require("dotenv").config();
 
-console.log(process.env);
-
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -20,7 +18,7 @@ app.get("/", (req, res) => {
 
 //email page
 app.post("/phoneRepair/address", (req, res) => {
-  const { Reference, Email, FirstName, LastName, Address, HomePermit, company, color, model, issues, cost, date, time } = req.body.data;
+  const { Reference, Email, FirstName, LastName, Address, permit, company, color, model, issues, cost, date, time } = req.body.data;
   //sendgrid reqs
   const msg = {
     to: Email,
@@ -35,7 +33,7 @@ app.post("/phoneRepair/address", (req, res) => {
       color: color,
       issues: issues,
       Address: Address,
-      permit: HomePermit,
+      permit: permit,
       city: "Edmonton",
       cost: cost,
       date: date,
@@ -47,5 +45,15 @@ app.post("/phoneRepair/address", (req, res) => {
   console.log(res.status);
   res.send("Data received");
 });
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'client/build')));
+
+  // Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  });
+}
 
 app.listen(4000, () => console.log("running on port 4000"));

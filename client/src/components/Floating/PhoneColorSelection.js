@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { createColor } from "../../store/actions/createDetails";
 import Footer from "../layout/Footer";
-import StoreFetcher from "../Floating/StoreFetcher";
+import StoreFetcher from "./StoreFetcher";
 
 class PhoneColorSelection extends Component {
   constructor(props) {

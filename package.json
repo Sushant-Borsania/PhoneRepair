@@ -1,52 +1,31 @@
 {
-  "name": "prerun",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@sendgrid/mail": "^6.4.0",
-    "axios": "^0.19.0",
-    "cors": "^2.8.5",
-    "dotenv": "^8.1.0",
-    "express": "^4.17.1",
-    "formik": "^1.5.8",
-    "moment": "^2.24.0",
-    "nanoid": "^2.0.4",
-    "react": "^16.8.6",
-    "react-datepicker": "^2.8.0",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1",
-    "redux": "^4.0.4",
-    "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0",
-    "save": "^2.4.0",
-    "yup": "^0.27.0"
+  "name": "heroku-react-express",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "author": {
+    "name": "Sushant Borsania"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev":"concurrently \"npm start\" \"cd server && nodemon index.js\""
+    "dev": "run-p dev:**",
+    "dev:server": "nodemon server.js",
+    "dev:app": "cd client && npm run start",
+    "build:app": "cd client && npm run build",
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
   },
   "devDependencies": {
-    "concurrently": "^4.1.2",
-    "node-sass": "^4.12.0"
-  }
+    "nodemon": "^1.18.10",
+    "npm-run-all": "^4.1.5"
+  },
+  "keywords": [
+    "heroku",
+    "express",
+    "create-react-app",
+    "react"
+  ]
 }

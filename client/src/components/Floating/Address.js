@@ -3,7 +3,7 @@ import { withFormik, Form, Field } from "formik";
 import { connect } from "react-redux";
 import generate from "nanoid/generate";
 import Footer from "../layout/Footer";
-import StoreFetcher from "../Floating/StoreFetcher";
+import StoreFetcher from "./StoreFetcher";
 import axios from "axios";
 
 import * as Yup from "yup";
