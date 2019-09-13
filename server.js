@@ -1,11 +1,12 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
 const sgMail = require("@sendgrid/mail");
 require("dotenv").config();
-var path = require("path");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 4000;
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -44,18 +45,25 @@ app.post("/phoneRepair/address", (req, res) => {
     }
   };
   sgMail.send(msg);
-  console.log(res.status);
   res.send("Data received");
 });
 
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
-  app.use(express.static(path.join(__dirname, "client/build")));
-
+  // app.use(express.static(path.join(__dirname, "client/build")));
+  app.use(express.static("client/build"));
   // Handle React routing, return all requests to React app
   app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
+
+//    // "dev": "run-p dev:**",
+// "dev:server": "nodemon server.js",
+// "dev:app": "cd client && npm run start",
+// "build:app": "cd client && npm run build",
+
+
+// "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
