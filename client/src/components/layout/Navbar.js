@@ -48,10 +48,7 @@ export default class Navbar extends Component {
                 <NavLink to="/" exact className="navigation-list__item small-list">
                   <li>Home</li>
                 </NavLink>
-                <NavLink to="/about" className="navigation-list__item small-list">
-                  <li>About</li>
-                </NavLink>
-                <NavLink to="/services" className="navigation-list__item small-list">
+                <NavLink to="/phoneRepair" className="navigation-list__item small-list">
                   <li>Services</li>
                 </NavLink>
                 <NavLink to="/ContactMe" className="navigation-list__item small-list">
