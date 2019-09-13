@@ -14,10 +14,7 @@ sgMail.setApiKey(process.env.API_KEY);
 
 app.use(cors());
 
-//welcome page
-// app.get("/", (req, res) => {
-//   res.send("welcome to the sendgrid mail - test");
-// });
+
 
 //email page
 app.post("/phoneRepair/address", (req, res) => {
@@ -57,6 +54,11 @@ if (process.env.NODE_ENV === "production") {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
   });
 }
+
+//welcome page
+// app.get("/", (req, res) => {
+//   res.send("welcome to the sendgrid mail - test");
+// });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
