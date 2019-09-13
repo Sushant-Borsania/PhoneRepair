@@ -21,7 +21,8 @@
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "save": "^2.4.0",
-    "yup": "^0.27.0"
+    "yup": "^0.27.0",
+    "node-sass": "^4.12.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -47,7 +48,6 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^4.1.2",
-    "node-sass": "^4.12.0"
+    "concurrently": "^4.1.2"
   }
 }
