@@ -15,9 +15,9 @@ sgMail.setApiKey(process.env.API_KEY);
 app.use(cors());
 
 //welcome page
-app.get("/", (req, res) => {
-  res.send("welcome to the sendgrid mail - test");
-});
+// app.get("/", (req, res) => {
+//   res.send("welcome to the sendgrid mail - test");
+// });
 
 //email page
 app.post("/phoneRepair/address", (req, res) => {
