@@ -20,7 +20,7 @@ class PhoneColorSelection extends Component {
     this.props.history.push(path);
   };
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     const colors = this.props.color[0].colors;
     const isState = this.props.userSelections.color;
     let btn;
