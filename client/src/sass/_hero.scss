@@ -1,17 +1,14 @@
 .hero-container {
-  background: url("images/hero.png") no-repeat;
-  background-size: contain;
-  background-position: right bottom;
   height: 50vh;
+  border-bottom: 2px solid black;;
 }
 .hero-container {
-  // transform: translateX(-185px);
   display: grid;
   grid-template-rows: repeat(3, max-content);
-  justify-content: start;
+  justify-content: center;
   align-content: center;
   align-items: center;
-  justify-items: start;
+  justify-items: center;
   padding: 2rem;
 
   &-heading {
@@ -24,32 +21,54 @@
   &-tagline {
     font-family: $font-primary;
     font-size: 1.7rem;
-    color: white;
+    color: black;
     font-weight: 400;
     margin: 1rem 0;
     position: relative;
     text-align: center;
     display: block;
-   padding: 1rem;
+    padding: 1rem;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
-    background: #2c3e50; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, rgb(29, 88, 97), #99c2eb); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, rgb(29, 88, 97), #99c2eb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    // background: #2c3e50; /* fallback for old browsers */
+    // background: -webkit-linear-gradient(
+    //   to right,
+    //   rgb(29, 88, 97),
+    //   #99c2eb
+    // ); /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(
+    //   to right,
+    //   rgb(29, 88, 97),
+    //   #99c2eb
+    // ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
   .cta-1 {
-    background-color: #d9e2ec;
-    padding: 1.4rem;
-    color: #102a43;
-    font-family: inherit;
-    font-size: 1.6rem;
-    border-radius: 10px;
-    border: 1px solid transparent;
-    border-bottom: 3px solid #6e8ba8;
-    margin-top: 2rem;
-    &:active {
-      border-bottom: 3px solid transparent;
-      transform: translateY(3px);
-    }
+    display: inline-block;
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: #192a56;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  button:hover,
+  button:focus {
+    background: #0053ba;
+  }
+
+  button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+  }
+
+  button:active {
+    transform: scale(0.99);
   }
 }

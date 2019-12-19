@@ -1,13 +1,14 @@
 .services-container {
   display: grid;
   grid-template-rows: repeat(2, min-content);
-  margin-top: 10rem;
+  margin-top: 6rem;
 }
 
 .services-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-gap: 2rem;
+  margin-top: 4rem;
   & > * {
     display: grid;
     grid-template-rows: repeat(2, max-content);
@@ -16,7 +17,7 @@
     justify-items: center;
     cursor: pointer;
     text-decoration: none;
-    color:  inherit;
+    color: inherit;
     &:not(:last-child) {
       border-right: 2px solid #f0f4f8;
     }
@@ -28,21 +29,25 @@
   width: 4rem;
   justify-self: center;
   align-self: center;
-  fill: #38BEC9;
+  fill: #192a56;
 }
 
 .service-header {
   font-family: $font-primary;
   font-size: 1.8rem;
   font-weight: normal;
-  // text-align: center;
-  margin: 2rem 0;
+  margin-top: 2rem;
 }
 
 .services-heading {
+  text-align: center;
   font-size: 2.8rem;
   font-family: $font-heading;
   font-weight: 400;
   color: #102a43;
   margin-bottom: 5rem;
+}
+
+.muted {
+ pointer-events: none;
 }

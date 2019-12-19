@@ -10,7 +10,7 @@
       &__item {
         display: inline-block;
         text-decoration: none;
-        color: $light-blue;
+        color: black;
         &:not(:last-child) {
           margin-right: 2rem;
         }
@@ -23,12 +23,12 @@
     align-items: center;
   }
   .navigation-right .navigation-list__item.active {
-    color: red;
-    border-bottom: 4px solid $border-color;
+    color: black;
+    border-bottom: 4px solid #192a56;
   }
   .container-small .navigation-list__item.active {
-    color: red;
-    border-bottom: 4px solid $border-color;
+    color: black;
+    border-bottom: 4px solid #192a56;
   }
   .container-small {
     display: none;

@@ -17,30 +17,33 @@ class Services extends Component {
             </div>
             <h5 className="service-header">phone repair</h5>
           </Link>
-          <Link to={"/phoneRepair"} className="services-content__2">
+          <div className="services-content__2 muted">
             <div className="services-content__2">
               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="service-icon">
                 <use xlinkHref={`${"images/sprite.svg#icon-library"}`}></use>
               </svg>
             </div>
             <h5 className="service-header">Wall Mounting</h5>
-          </Link>
-          <Link to={"/phoneRepair"} className="services-content__3">
+            <span>(Currently unavailable)</span>
+          </div>
+          <div className="services-content__3 muted">
             <div className="services-content__3">
               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="service-icon">
                 <use xlinkHref={`${"images/sprite.svg#icon-display "}`}></use>
               </svg>
             </div>
             <h5 className="service-header">TV repair</h5>
-          </Link>
-          <Link to={"/phoneRepair"} className="services-content__4">
+            <span>(Currently unavailable)</span>
+          </div>
+          <div className="services-content__4 muted">
             <div className="services-content__4">
               <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" className="service-icon">
                 <use xlinkHref={`${"images/sprite.svg#icon-connection"}`}></use>
               </svg>
             </div>
             <h5 className="service-header">Wifi set-up</h5>
-          </Link>
+            <span>(Currently unavailable)</span>
+          </div>
         </div>
       </div>
     );
