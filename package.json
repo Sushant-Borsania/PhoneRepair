@@ -6,6 +6,10 @@
   "author": {
     "name": "Sushant Borsania"
   },
+  "engines": {
+    "node": "10.16.3",
+    "npm": "6.9.0"
+  },
   "scripts": {
     "start": "node server.js",
     "server": "nodemon server.js",
