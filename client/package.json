@@ -24,6 +24,10 @@
     "yup": "^0.27.0",
     "node-sass": "^4.12.0"
   },
+    "engines": {
+    "node": "10.16.3",
+    "npm": "6.9.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
