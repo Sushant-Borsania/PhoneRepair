@@ -14,8 +14,6 @@ sgMail.setApiKey(process.env.API_KEY);
 
 app.use(cors());
 
-
-
 //email page
 app.post("/phoneRepair/address", (req, res) => {
   const { Reference, Email, FirstName, LastName, Address, permit, company, color, model, issues, cost, date, time } = req.body.data;
@@ -66,6 +64,5 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 // "dev:server": "nodemon server.js",
 // "dev:app": "cd client && npm run start",
 // "build:app": "cd client && npm run build",
-
 
 // "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
