@@ -1,7 +1,14 @@
 .footer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  background-color: #044e54;
+  display: flex;
+  justify-content: space-between;
+  // grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  background-color: #192a56;
   padding: 2rem;
-  color: #87eaf2;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.footer-heading_1{
+  font-weight: 300;
+  letter-spacing: 1px;
 }

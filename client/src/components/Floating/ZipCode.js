@@ -29,7 +29,7 @@ class ZipCode extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log("After Checking", this.state.isEdmonton);
+    // console.log("After Checking", this.state.isEdmonton);
     this.state.isEdmonton ? this.props.history.push("/phoneRepair/address") : this.props.history.push("/phoneRepair/noservice");
   }
 

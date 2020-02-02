@@ -27,29 +27,73 @@ class Address extends Component {
                   <label htmlFor="firstName" style={{ display: "block" }}>
                     FirstName
                   </label>
-                  <Field className={this.props.touched.FirstName && this.props.errors.FirstName ? "text-input error" : "text-input"} id="firstName" type="text" name="FirstName" />
-                  {this.props.touched.FirstName && this.props.errors.FirstName && <p>{this.props.errors.FirstName}</p>}
+                  <Field
+                    className={
+                      this.props.touched.FirstName && this.props.errors.FirstName
+                        ? "text-input error"
+                        : "text-input"
+                    }
+                    id="firstName"
+                    type="text"
+                    name="FirstName"
+                  />
+                  {this.props.touched.FirstName && this.props.errors.FirstName && (
+                    <p>{this.props.errors.FirstName}</p>
+                  )}
                 </div>
                 <div className="form-field">
                   <label htmlFor="LastName" style={{ display: "block" }}>
                     LastName
                   </label>
-                  <Field className={this.props.touched.LastName && this.props.errors.LastName ? "text-input error" : "text-input"} id="LastName" type="text" name="LastName" />
-                  {this.props.touched.LastName && this.props.errors.LastName && <p>{this.props.errors.LastName}</p>}
+                  <Field
+                    className={
+                      this.props.touched.LastName && this.props.errors.LastName
+                        ? "text-input error"
+                        : "text-input"
+                    }
+                    id="LastName"
+                    type="text"
+                    name="LastName"
+                  />
+                  {this.props.touched.LastName && this.props.errors.LastName && (
+                    <p>{this.props.errors.LastName}</p>
+                  )}
                 </div>
                 <div className="form-field">
                   <label htmlFor="email" style={{ display: "block" }}>
                     Email
                   </label>
-                  <Field className={this.props.touched.Email && this.props.errors.Email ? "text-input error" : "text-input"} id="email" type="email" name="Email" />
-                  {this.props.touched.Email && this.props.errors.Email && <p>{this.props.errors.Email}</p>}
+                  <Field
+                    className={
+                      this.props.touched.Email && this.props.errors.Email
+                        ? "text-input error"
+                        : "text-input"
+                    }
+                    id="email"
+                    type="email"
+                    name="Email"
+                  />
+                  {this.props.touched.Email && this.props.errors.Email && (
+                    <p>{this.props.errors.Email}</p>
+                  )}
                 </div>
                 <div className="form-field">
                   <label htmlFor="address" style={{ display: "block" }}>
                     Address
                   </label>
-                  <Field className={this.props.touched.Address && this.props.errors.Address ? "text-input error" : "text-input"} id="address" type="text" name="Address" />
-                  {this.props.touched.Address && this.props.errors.Address && <p>{this.props.errors.Address}</p>}
+                  <Field
+                    className={
+                      this.props.touched.Address && this.props.errors.Address
+                        ? "text-input error"
+                        : "text-input"
+                    }
+                    id="address"
+                    type="text"
+                    name="Address"
+                  />
+                  {this.props.touched.Address && this.props.errors.Address && (
+                    <p>{this.props.errors.Address}</p>
+                  )}
                 </div>
                 <div className="form-field custom-flex">
                   <label>Where do we work? In our car or your home?</label>
@@ -107,8 +151,9 @@ const FormikForm = withFormik({
     const finalData = Object.assign({}, values, props.userSelections);
     //Send the data to node server so that we can send email from server!
     axios
-      .post("https://fixatdoorstep.herokuapp.com/phoneRepair/address", {
-        // .post("http://localhost:4000/phoneRepair/address", {
+      // .post("http://localhost:4000/phoneRepair/address", {
+      // .post("https://fixatdoorstep.herokuapp.com/phoneRepair/address", {
+        .post("http://localhost:4000/phoneRepair/address", {
         method: "POST",
         headers: {
           "content-type": "application/json"
@@ -121,7 +166,7 @@ const FormikForm = withFormik({
         props.history.push("/phoneRepair/ThankYou");
       })
       .catch(function(error) {
-        console.log(error.response);
+        console.error("ERR", error.response);
       });
   }
 })(Address);
@@ -131,3 +176,4 @@ const mapStateToProps = state => {
 };
 
 export default connect(mapStateToProps)(FormikForm);
+//API_KEY=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

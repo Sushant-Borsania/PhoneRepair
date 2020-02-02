@@ -1,22 +1,22 @@
 .color-selection {
-  color: #044e54;
+  color: #192a56;
   background-color: white;
   padding: 0.6rem;
   font-size: 2.4rem;
   font-family: inherit;
-  border-radius: 10px;
-  border: 2px solid #044e54;
+  border: 2px solid #192a56;
   place-self: center;
   margin-bottom: 3rem;
+  width: 250px;
 }
 
-.left-content{
+.left-content {
   display: grid;
   grid-row-gap: 1rem;
 }
 
-button:disabled{
+button:disabled {
   border: 1px solid #999999;
-  background-color: #cccccc;
+  // background-color: #cccccc;
   color: #666666;
 }

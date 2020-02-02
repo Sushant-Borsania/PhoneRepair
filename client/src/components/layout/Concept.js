@@ -19,12 +19,15 @@ export default class Concept extends Component {
           <div className="concept-content_2">
             <h6 className="concept-content_heading">2. Visit by a repair agent</h6>
             <p className="concept-content_detail">You just need to visit our website, book an appointment providing us your convenient time and place to get your device up and running.</p>
-            <span className="concept-content_subbutton">Checkout our agents &nbsp; &#8594;</span>
+            <span className="concept-content_subbutton" style={{color: "black", pointerEvents: "none", border: "none"}}>Checkout our agents below</span>
           </div>
           <div className="concept-content_3">
             <h6 className="concept-content_heading">3. Get back your device up and running</h6>
             <p className="concept-content_detail">You just need to visit our website, book an appointment providing us your convenient time and place to get your device up and running.</p>
-            <span className="concept-content_subbutton">Yes I'm in! &nbsp; &#8594;</span>
+            <Link to="/phoneRepair" className="concept-content_subbutton">
+            <span>Yes I'm in! &nbsp; &#8594;</span>
+
+            </Link>
           </div>
         </div>
         <div className="concept-promotion">

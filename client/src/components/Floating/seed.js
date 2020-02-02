@@ -2,29 +2,37 @@ export default [
   {
     comapnyName: "Samsung",
     id: "samsung",
-    phones: [{ phoneName: "s8", colors: ["red", "green", "violet"] }, { phoneName: "s9", colors: ["pink", "orange", "black"] }, { phoneName: "s10", colors: ["blue", "yellow", "green"] }]
+    phones: [
+      { phoneName: "s8", colors: ["Brick Red", "Gold", "Violet"] },
+      { phoneName: "s9", colors: ["Gold", "White", "Black"] },
+      { phoneName: "s10", colors: ["Sky Blue", "Gold", "Violet"] }
+    ]
   },
   {
     comapnyName: "Apple",
     id: "apple",
     phones: [
-      { phoneName: "Iphone8", colors: ["red", "green", "violet"] },
-      { phoneName: "Iphone9", colors: ["pink", "orange", "black"] },
-      { phoneName: "Iphone10", colors: ["blue", "yellow", "green"] }
+      { phoneName: "Iphone8", colors: ["Sky Blue", "White", "Black"] },
+      { phoneName: "Iphone9", colors: ["Sky Blue", "Gold", "Plain Black"] },
+      { phoneName: "Iphone10", colors: ["White", "Gold", "Black"] }
     ]
   },
   {
     comapnyName: "Razor",
     id: "apple",
-    phones: [{ phoneName: "z8", colors: ["red", "green", "violet"] }, { phoneName: "z9", colors: ["pink", "orange", "black"] }, { phoneName: "z10", colors: ["blue", "yellow", "green"] }]
+    phones: [
+      { phoneName: "z8", colors: ["Brick Red", "Gold", "Violet"] },
+      { phoneName: "z9", colors: ["Brick red", "Silver", "Black"] },
+      { phoneName: "z10", colors: ["Sky Blue", "Gold", "Gold"] }
+    ]
   },
   {
     comapnyName: "Apple",
     id: "apple",
     phones: [
-      { phoneName: "Iphone8", colors: ["red", "green", "violet"] },
-      { phoneName: "Iphone9", colors: ["pink", "orange", "black"] },
-      { phoneName: "Iphone10", colors: ["blue", "yellow", "green"] }
+      { phoneName: "Iphone8", colors: ["Brick Red", "Gold", "Violet"] },
+      { phoneName: "Iphone9", colors: ["Brick red", "Silver", "Black"] },
+      { phoneName: "Iphone10", colors: ["Sky Blue", "Gold", "Gold"] }
     ]
   }
 ];

@@ -10,8 +10,8 @@
 }
 
 .heading-pr {
-  background: #044e54;
-  color: #87eaf2;
+  background: #192a56;
+  color: white;
   font-family: $font-heading;
   font-size: 1.3rem;
   padding: 2rem 2rem 2rem 0;
@@ -34,9 +34,8 @@
       text-align: center;
       padding: 3rem;
       width: 15rem;
-      color: #044e54;
-      background-color: #f0f4f8;
-      border-radius: 25px;
+      color: #192a56;
+      // background-color: #f0f4f8;
       font-family: $font-heading;
       font-size: 1.6rem;
       font-weight: 700;
@@ -51,5 +50,5 @@
   text-align: center;
   margin: 4rem 0;
   font-family: $font-heading;
-  color: #044e54;
+  color: #192a56;
 }

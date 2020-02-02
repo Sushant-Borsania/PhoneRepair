@@ -13,8 +13,8 @@
   grid-template-columns: 80% 20%;
   margin-bottom: 2rem;
   @media screen and (max-width: $bp-smallest) {
-  grid-template-columns: 1fr;
-  grid-column-gap: 2rem;
+    grid-template-columns: 1fr;
+    grid-column-gap: 2rem;
   }
 }
 .floater {
@@ -24,7 +24,7 @@
 
 .heading-pr-i {
   background: #38bec9;
-  color: #044e54;
+  color: #192a56;
   font-family: $font-heading;
   font-size: 1.3rem;
   padding: 2rem 2rem 2rem 0;

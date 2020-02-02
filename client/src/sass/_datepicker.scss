@@ -16,7 +16,7 @@
 }
 
 .date-container {
-  background-color: aliceblue;
+  background-color: aliceSky Blue;
   display: grid;
   grid-template-rows: repeat(2, max-content);
 }
@@ -134,8 +134,8 @@
 }
 
 .box-issue {
-  border: 2px solid silver;
-  border-radius: 13px;
+  border: 1px solid silver;
+  // border-radius: 13px;
   text-align: center;
   box-shadow: 0px 2px 1px silver;
   display: grid;

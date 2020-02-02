@@ -30,7 +30,7 @@ export default class Navbar extends Component {
                 <li>About</li>
               </NavLink> */}
               <NavLink to="/phoneRepair" className="navigation-list__item">
-                <li>Services</li>
+                <li>Book an agent</li>
               </NavLink>
               <NavLink to="/ContactMe" className="navigation-list__item">
                 <li>

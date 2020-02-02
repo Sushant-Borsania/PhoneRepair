@@ -43,7 +43,7 @@ class DateConfirmation extends React.Component {
   }
 
   handleTimeEndChange(date) {
-    console.log(date);
+    // console.log(date);
     this.setState({
       endTime: date
     });
