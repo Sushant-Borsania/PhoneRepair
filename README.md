@@ -1,5 +1,5 @@
 # PhoneRepair business concept website
-This is the website creted with react framework for front-end.
+This is the website created with react framework for front-end.
 This is the approach of solving customer's problem:
 Usually when a phone/mobile device needs a repair then customer needs to visit the repair shop - drop their phone and again
 visit the shop to collect the phone.
@@ -16,12 +16,12 @@ Advantages:
 - Routing by react-router
 - Email Funtionality by using sendgrid free tier. Customer and owner both receives an email detailing time, date and issues they
 selected.
-- Custome check of Edmomonton city postal code using `set` array method.
+- Custom check of Edmonton city postal code using `set` array method.
 - Hosting on Heroku.
 
 ## Live website Link
 You can check the website [here](https://fixatdoorstep.herokuapp.com/)
-Please use one of the edmonton's zip code such as T6W3H9.
+Please use one of the Edmonton's zip code such as T6W3H9.
 
 ##### Kindly review the app and I am always happy to hear for the feedback at sushant.yt@gmail.com
 Thanks.
